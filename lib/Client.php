@@ -139,7 +139,7 @@ class Client extends Base
 
             // Default headers
             $headers = [
-                'Host'                  => $host . ":" . $port,
+                'Host'                  => $host . (isset($url_parts['port']) ? ':' . $port : ''),
                 'User-Agent'            => 'websocket-client-php',
                 'Connection'            => 'Upgrade',
                 'Upgrade'               => 'websocket',
